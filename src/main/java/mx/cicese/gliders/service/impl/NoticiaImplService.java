@@ -3,6 +3,8 @@ package mx.cicese.gliders.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import mx.cicese.gliders.dao.NoticiaDao;
@@ -19,6 +21,12 @@ public class NoticiaImplService implements INoticiaService {
 	public List<Noticia> listAll() {
 		
 		return (List)noticiaDao.findAll();
+	}
+
+	@Override
+	public Page<Noticia> listAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return noticiaDao.findAll(pageable);
 	}
 
 }
