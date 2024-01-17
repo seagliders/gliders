@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div th:fragment="header">
+		<nav class="navbar navbar-expand-lg bg-white fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="login">
+					<img th:src="@{/images/navbar/logo_pilotos.png}" width="50%">
+				</a>
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse offset-md-4" id="navbarResponsive">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item active">
+							<a class="nav-link text-primary" href="/" id="inicio">Inicio<span
+									class="sr-only"></span></a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownGrupo"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Grupo
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownGrupo">
+								<li><a class="dropdown-item text-secondary" href="GMOG" id="quienesomos">Quienes
+										somos</a></li>
+								<li><a class="dropdown-item text-secondary" href="mision" id="mision">Misión</a></li>
+								<li><a class="dropdown-item text-secondary" href="noticias" id="noticias">Noticias</a>
+								</li>
+								<li><a class="dropdown-item text-secondary" href="directorio"
+										id="directorio">Directorio</a></li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-secondary" href="#" id="navbarDropdownInv"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Investigación
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownInv">
+								<li><a class="dropdown-item text-secondary" href="proyecto" id="proyecto">Proyectos</a>
+								</li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item text-secondary" href="gliders" id="gliders">Gliders</a></li>
+							</ul>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link page text-secondary" href="datos" id="visualizacion">Datos</a>
+						</li>
+						<li>
+							<a class="nav-link page text-secondary" href="basesdatos" id="basedatos">Bases de datos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link page text-secondary" href="publicaciones"
+								id="publicaciones">Publicaciones</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link page text-secondary" href="divulgacion" id="divulgacion">Divulgación</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div th:fragment="footer">
+		<footer class="py-5 page-footer font-small indigo">
+			<div class="container text-center text-md-left bg-light">
+				<div class="row">
+					<div class="col-lg-2 mx-auto">
+						<h5 class="font-weight-bold text-uppercase mt-3 mb-4">GRUPO</h5>
+						<ul class="list-unstyled">
+							<li><a href="GMOG">Quienes Somos</a></li>
+							<li><a href="mision">Misión</a></li>
+							<li><a href="noticias">Noticias</a></li>
+							<li><a href="directorio">Directorio</a></li>
+						</ul>
+					</div>
+					<hr class="clearfix w-100 d-md-none">
+					<div class="col-lg-2 mx-auto">
+						<h5 class="font-weight-bold text-uppercase mt-3 mb-4">INVESTIGACIÓN</h5>
+						<ul class="list-unstyled">
+							<li><a href="proyecto">Proyectos</a></li>
+							<li><a href="gliders">Gliders</a></li>
+						</ul>
+					</div>
+					<hr class="clearfix w-100 d-md-none">
+					<div class="col-lg-2 mx-auto">
+						<h5 class="font-weight-bold text-uppercase mt-3 mb-4"><a href="datos">DATOS</a></h5>
+					</div>
+					<hr class="clearfix w-100 d-md-none">
+					<div class="col-lg-2 mx-auto">
+						<h5 class="font-weight-bold text-uppercase mt-3 mb-4"><a href="publicaciones">PUBLICACIONES</a></h5>
+					</div>
+					<div class="col-lg-2 mx-auto">
+						<h5 class="font-weight-bold text-uppercase mt-3 mb-4"><a href="divulgacion">DIVULGACIÓN</a></h5>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright text-center py-3" style="background-color: rgba(0, 0, 0, 0.2);">© 2024
+				Copyright:
+				<a href="http://gliders.cicese.mx"> gliders.cicese.mx</a>
+			</div>
+		</footer>
+	</div>
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>

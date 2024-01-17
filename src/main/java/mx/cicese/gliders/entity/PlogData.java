@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "plog")
+@Table(name="plog")
 public class PlogData {
 	
 	@Id
@@ -110,7 +110,7 @@ public class PlogData {
 	@Column(name = "error_vbd_retries")
 	private Integer errorVbdRetries;
 	
-	@Column(name = "error_gps_not_provide-data")
+	@Column(name = "error_gps_not_provide_data")
 	private Integer errorGpsNotProvideData;
 	
 	@Column(name = "error_sensor_time_outs")
