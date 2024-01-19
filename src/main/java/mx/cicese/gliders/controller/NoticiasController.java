@@ -28,7 +28,7 @@ public class NoticiasController {
 
 	@GetMapping("")
 	public List<Noticia> listAll(){
-		return noticiaService.listAll();
+		return noticiaService.listAllDscOrder();
 	}
 	
 	@GetMapping("/pagina")

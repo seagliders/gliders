@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import mx.cicese.gliders.dao.NoticiaDao;
@@ -18,9 +19,9 @@ public class NoticiaImplService implements INoticiaService {
 	private NoticiaDao noticiaDao;
 
 	@Override
-	public List<Noticia> listAll() {
+	public List<Noticia> listAllDscOrder() {
 		
-		return (List)noticiaDao.findAll();
+		return (List)noticiaDao.findAll(Sort.by("fecha").descending());
 	}
 
 	@Override
