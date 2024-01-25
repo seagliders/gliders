@@ -27,5 +27,12 @@ public class HomeController {
 		model.addAttribute("noticias", noticias);
 		return "usuario/home";
 	}
+	
+	@GetMapping("/datos")
+	public String datos(Model model, HttpSession session) {
+		
+		return "usuario/datos";
+		
+	}
 
 }

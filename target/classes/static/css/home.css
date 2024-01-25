@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+
+.card{
+	max-height: 500px;
+	min-height: 500px;
+}
+#noticias-card{
+	height: 473px;
+  overflow: scroll;
+	
+}
