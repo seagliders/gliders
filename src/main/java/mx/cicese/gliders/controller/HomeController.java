@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.servlet.http.HttpSession;
 import mx.cicese.gliders.entity.Noticia;
 import mx.cicese.gliders.service.INoticiaService;
+import mx.cicese.gliders.service.IReporteService;
 
 @Controller
 @RequestMapping("/")
@@ -18,6 +19,9 @@ public class HomeController {
 	
 	@Autowired
 	private INoticiaService noticiaService;
+	
+	@Autowired
+	private IReporteService iReporteService;
 	
 	@GetMapping("")
 	public String home(Model model, HttpSession session) {
@@ -30,6 +34,8 @@ public class HomeController {
 	
 	@GetMapping("/datos")
 	public String datos(Model model, HttpSession session) {
+		model.addAttribute("activas", iReporteService.listReporteActivas());
+		model.addAttribute("inactivas", iReporteService.listReporteInactivas());
 		
 		return "usuario/datos";
 		

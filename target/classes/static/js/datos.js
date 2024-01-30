@@ -4,6 +4,7 @@
 var checkAreaCollapseOpen = "";
 var checkAreaCollapseClose = "";
 
+
 var map = L.map('map').setView([24.25, -90.17], 5);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
@@ -25,22 +26,29 @@ $('#collapseSubMenu').on('show.bs.collapse', function() {
 		switchControl = checkAreaCollapseOpen;
 	}
 
+	$("#" + switchControl).removeClass("btn-secondary");
+	$("#" + switchControl).addClass("bgSubMenu");
+
 	switch (switchControl) {
 		case ("herramientas"):
-			console.log("Entro a hereamientas");
 			$("#collapseSubMenu").append(
 				"<div class='col-2 text-center' data-bs-toggle='collapse' href='#collapseSubMenuMarcas' role='button'" +
-				"aria-expanded='false' aria-controls='collapseSubMenuMarcas'><button type='button' class='btn btn-secondary btn-sm col-12 rounded-0'>Marcas</button></div>");
+				"aria-expanded='false' aria-controls='collapseSubMenuMarcas'><button type='button' class='btn btn-info btn-sm col-12 rounded-0'>Marcas</button></div>");
 			checkAreaCollapseOpen = switchControl;
+			checkAreaCollapseClose = switchControl;
 			break;
 		case ("misiones"):
+
 			$("#collapseSubMenu").append(
 				"<div class='col-2 text-center' data-bs-toggle='collapse' href='#collapseSubMenuActivas' role='button'" +
-				"aria-expanded='false' aria-controls='collapseSubMenuActivas'><button type='button' class='btn btn-secondary btn-sm col-12 rounded-0'>Activas</button></div>" +
+				"aria-expanded='false' aria-controls='collapseSubMenuActivas'><button type='button' class='btn btn-info btn-sm col-12 rounded-0'>Activas</button></div>" +
 				"<div class='col-2 text-center' data-bs-toggle='collapse' href='#collapseSubMenuInactivas' role='button'" +
-				"aria-expanded='false' aria-controls='collapseSubMenuInactivas'><button type='button' class='btn btn-secondary btn-sm col-12 rounded-0'>Inactivas</button></div>"
+				"aria-expanded='false' aria-controls='collapseSubMenuInactivas'><button type='button' class='btn btn-info btn-sm col-12 rounded-0'>Inactivas</button></div>"
 			);
+
+
 			checkAreaCollapseOpen = switchControl;
+			checkAreaCollapseClose = switchControl;
 			break;
 		case ("derivadores"):
 			$("#collapseSubMenu").append(
@@ -54,6 +62,7 @@ $('#collapseSubMenu').on('show.bs.collapse', function() {
 				"</div>"
 			);
 			checkAreaCollapseOpen = switchControl;
+			checkAreaCollapseClose = switchControl;
 			break;
 		case ("productos"):
 			$("#collapseSubMenu").append(
@@ -76,6 +85,7 @@ $('#collapseSubMenu').on('show.bs.collapse', function() {
 
 			);
 			checkAreaCollapseOpen = switchControl;
+			checkAreaCollapseClose = switchControl;
 			break;
 		case ("satelite"):
 			$("#collapseSubMenu").append(
@@ -104,6 +114,7 @@ $('#collapseSubMenu').on('show.bs.collapse', function() {
 				"</div>"
 			);
 			checkAreaCollapseOpen = switchControl;
+			checkAreaCollapseClose = switchControl;
 			break;
 		case ("batimetria"):
 			$("#collapseSubMenu").append(
@@ -128,14 +139,19 @@ $('#collapseSubMenu').on('show.bs.collapse', function() {
 				"<input class='form-check-input' type='checkbox' id='flexSwitchCheckDefault'>" +
 				"<label class='form-check-label' for='flexSwitchCheckDefault'>-3000(m)</label>" +
 				"</div>" +
-				"</div>" 
+				"</div>"
 			);
+			checkAreaCollapseOpen = switchControl;
+			checkAreaCollapseClose = switchControl;
 			break;
 	}
 });
 $('#collapseSubMenu').on('hide.bs.collapse', function() {
 
+	$("#" + checkAreaCollapseClose).removeClass("bgSubMenu");
+	$("#" + checkAreaCollapseClose).addClass("btn-secondary");
 	checkAreaCollapseClose = event.srcElement.id;
+
 	$('#collapseSubMenuActivas').collapse("hide");
 	$('#collapseSubMenuInactivas').collapse("hide");
 	$('#collapseSubMenuMarcas').collapse("hide");
@@ -145,6 +161,7 @@ $('#collapseSubMenu').on('hide.bs.collapse', function() {
 });
 
 $('#collapseSubMenu').on('hidden.bs.collapse', function() {
+
 	if (checkAreaCollapseClose != checkAreaCollapseOpen) {
 		checkAreaCollapseOpen = checkAreaCollapseClose;
 		$('#collapseSubMenu').collapse('show');
@@ -156,3 +173,5 @@ $('#collapseSubMenuSub').on('show.bs.collapse', function() {
 	console.log("1");
 
 });
+
+
