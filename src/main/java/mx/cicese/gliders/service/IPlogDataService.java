@@ -10,6 +10,6 @@ public interface IPlogDataService {
 	
 	public List<PlogData> listAll();
 	
-	List<PlogData> findPlogdataMissions();
+	public List<PlogData> findPlogdataMissions();
 
 }

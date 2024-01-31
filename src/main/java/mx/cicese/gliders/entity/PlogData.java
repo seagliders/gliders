@@ -1,6 +1,6 @@
 package mx.cicese.gliders.entity;
 
-import java.io.Serializable;
+
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -16,9 +16,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="plog")
-public class PlogData implements Serializable {
+public class PlogData{
 	
-	private static final long serialVersionUID = 1L;
+	
 
 	@Id
 	private Integer id;
